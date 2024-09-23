@@ -20,14 +20,39 @@
             </span>
         </label>
         <div class="logo">
-            <img src="./img/Logo.png" alt="">
+            <img src="./img/Logo.png" alt="單位名稱" class="img-fluid">
         </div>
         <ul class="sidebarMenu">
-            <li><a href="#">磁碟使用狀況</a></li>
-            <li><a href="#" class="active">磁碟管理</a></li>
-            <li><a href="#">單位共用磁碟</a></li>
-            <li><a href="#">個人共用磁碟</a></li>
-            <li><a href="#">垃圾桶</a></li>
+            <li>
+                <a href="#" class="masterMenu active">網路磁碟</a>
+                <ul class="submenu">
+                    <li><a href="#">磁碟使用狀況</a></li>
+                    <li><a href="#" class="active">磁碟管理</a></li>
+                    <li><a href="#">單位共用磁碟</a></li>
+                    <li><a href="#">個人共用磁碟</a></li>
+                    <li><a href="#">垃圾桶</a></li>
+                </ul>
+            <li>
+                <a href="#" class="masterMenu">系統管理</a>
+                <ul class="submenu">
+                    <li><a href="#">磁碟容量設置</a></li>
+                    <li><a href="#">共用磁碟權限</a></li>
+                    <li><a href="#">檔案管理權限</a></li>
+                    <li><a href="#">目錄維護權限</a></li>
+                    <li><a href="#">人員組織異動作業</a></li>
+                </ul>
+            <li>
+                <a href="#" class="masterMenu">異動LOG記錄</a>
+                <ul class="submenu">
+                    <li><a href="#">權限異動LOG記錄</a></li>
+                    <li><a href="#">檔案異動LOG記錄</a></li>
+                </ul>
+            <li>
+                <a href="#" class="masterMenu">安全設定</a>
+                <ul class="submenu">
+                    <li><a href="#">安全設定</a></li>
+                </ul>
+            </li>
         </ul>
         <div class="diskused">
             <div class="d-flex align-items-center justify-content-center">
@@ -48,6 +73,7 @@
     <div class="main">
         <div id="topbar">
             <div class="userfunc">
+
                 <div class="search-box">
                     <input class="form-control search-input " type="search" placeholder="查詢檔案">
                     <svg class="svg-inline--fa fa-search fa-w-16 search-box-icon" aria-hidden="true" focusable="false"
@@ -58,34 +84,15 @@
                         </path>
                     </svg>
                 </div>
-                <div class="d-flex flex-grow-1 justify-content-center align-items-center gap-3 ms-4">
-                    <a href="#">
-                        <span class="topMainFunc g-icon d-block material-symbols-outlined">
-                            lock
-                        </span>
-                    </a>
-                    <a href="#">
-                        <span class="topMainFunc g-icon d-block material-symbols-outlined">
-                            article_shortcut
-                        </span>
-                    </a>
-                    <a href="#">
-                        <span class="topMainFunc g-icon material-symbols-outlined active">
-                            folder_open
-                        </span>
-                    </a>
-                    <a href="#">
-                        <span class="topMainFunc g-icon d-block material-symbols-outlined">
-                            settings
-                        </span>
-                    </a>
-                </div>
                 <a href="#" class="d-flex align-items-center gap-1" id="userlogin">
-                    <span class="d-block lh-1">用戶名稱</span>
+
                     <span class="g-icon d-block material-symbols-outlined filled"
-                        style="--g-icon-fz:2rem;--g-icon-wh:2rem;--g-icon-color:var(--color-9a);font-weight:700">
+                        style="--g-icon-fz:2rem;--g-icon-wh:2rem;--g-icon-color:var(--color-9a);font-weight:500">
                         account_circle
                     </span>
+                    <div class="d-flex align-items-center gap-1">
+                        <p class="mb-0">顯示資訊單位</p> <span class="badge text-bg-secondary ">登出</span>
+                    </div>
                 </a>
             </div>
 
@@ -104,7 +111,7 @@
                             <span class="g-icon d-block material-symbols-outlined"
                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                 add </span>
-                            <span class="lh-1 ms-1"> 新增資料夾</span>
+                            <span class="lh-1 ms-1"> 新資料夾</span>
                         </div>
                     </button>
 
@@ -144,15 +151,6 @@
                         </div>
                     </button>
 
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#">
-                        <div class="d-flex aling-items-center">
-                            <span class="g-icon d-block material-symbols-outlined"
-                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                mail </span>
-                            <span class="lh-1 ms-1"> E-mail傳送</span>
-                        </div>
-                    </button>
-
                 </div>
             </div>
         </div>
@@ -181,7 +179,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">資通安全處共用區文件專用</div>
+                                <div class="title-nowrap"><a href="javascript:;">資通安全處共用區文件專用</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -228,14 +226,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -259,7 +249,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">公務使用區</div>
+                                <div class="title-nowrap"><a href="javascript:;">公務使用區</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -306,14 +296,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -337,7 +319,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">請款明細表</div>
+                                <div class="title-nowrap"><a href="javascript:;">請款明細表</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -384,14 +366,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -415,7 +389,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">通行證 QRCODE</div>
+                                <div class="title-nowrap"><a href="javascript:;">通行證 QRCODE</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -462,14 +436,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -493,7 +459,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">公出請款申請單</div>
+                                <div class="title-nowrap"><a href="javascript:;">公出請款申請單</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -540,14 +506,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -571,7 +529,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">公務使用區</div>
+                                <div class="title-nowrap"><a href="javascript:;">公務使用區</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -612,14 +570,6 @@
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 pageless </span>
                                             <span class="lh-1 ms-1"> 重新命名</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
                                         </div>
                                     </button>
                                     <button type="button" class="btn btn-primary">
@@ -649,7 +599,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">消防安全影片</div>
+                                <div class="title-nowrap"><a href="javascript:;">消防安全影片</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -696,14 +646,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -727,7 +669,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">請款明細表</div>
+                                <div class="title-nowrap"><a href="javascript:;">請款明細表</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -774,14 +716,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -805,7 +739,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">電腦設備申請表</div>
+                                <div class="title-nowrap"><a href="javascript:;">電腦設備申請表</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -852,14 +786,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -883,7 +809,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">資通安全處共用區文件專用</div>
+                                <div class="title-nowrap"><a href="javascript:;">資通安全處共用區文件專用</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -930,14 +856,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -961,7 +879,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">公務使用區</div>
+                                <div class="title-nowrap"><a href="javascript:;">公務使用區</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -1008,14 +926,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -1039,7 +949,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">請款明細表</div>
+                                <div class="title-nowrap"><a href="javascript:;">請款明細表</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -1086,14 +996,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -1117,7 +1019,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">通行證 QRCODE</div>
+                                <div class="title-nowrap"><a href="javascript:;">通行證 QRCODE</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -1164,14 +1066,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -1195,7 +1089,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">公出請款申請單</div>
+                                <div class="title-nowrap"><a href="javascript:;">公出請款申請單</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -1242,14 +1136,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -1273,7 +1159,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">公務使用區</div>
+                                <div class="title-nowrap"><a href="javascript:;">公務使用區</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -1314,14 +1200,6 @@
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 pageless </span>
                                             <span class="lh-1 ms-1"> 重新命名</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
                                         </div>
                                     </button>
                                     <button type="button" class="btn btn-primary">
@@ -1351,7 +1229,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">消防安全影片</div>
+                                <div class="title-nowrap"><a href="javascript:;">消防安全影片</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -1398,14 +1276,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -1429,7 +1299,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">請款明細表</div>
+                                <div class="title-nowrap"><a href="javascript:;">請款明細表</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -1476,14 +1346,6 @@
                                         <div class="d-flex aling-items-center">
                                             <span class="g-icon d-block material-symbols-outlined"
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 arrow_split </span>
                                             <span class="lh-1 ms-1"> 移動</span>
                                         </div>
@@ -1507,7 +1369,7 @@
                                 </div>
                             </td>
                             <td title="名稱" nowrap="">
-                                <div class="title-nowrap">電腦設備申請表</div>
+                                <div class="title-nowrap"><a href="javascript:;">電腦設備申請表</a></div>
                             </td>
                             <td>
                                 <a href="javascript:;" class="fileManagerFunc">
@@ -1548,14 +1410,6 @@
                                                 style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
                                                 pageless </span>
                                             <span class="lh-1 ms-1"> 重新命名</span>
-                                        </div>
-                                    </button>
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="d-flex aling-items-center">
-                                            <span class="g-icon d-block material-symbols-outlined"
-                                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                                favorite </span>
-                                            <span class="lh-1 ms-1"> 最愛</span>
                                         </div>
                                     </button>
                                     <button type="button" class="btn btn-primary">
@@ -1605,8 +1459,8 @@
             </div>
         </div>
     </div>
-
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
     <script src="./js/filemanager.js"></script>
 </body>
 

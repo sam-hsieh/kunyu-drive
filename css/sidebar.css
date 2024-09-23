@@ -9,6 +9,7 @@
     box-shadow: 5px 0px 4px rgba(0, 0, 0, 0.1);
     z-index: 99;
     transition: left 0.5s;
+    overflow: auto;
 }
 
 #sidebar .diskused {
@@ -33,8 +34,35 @@
     margin: 0;
 }
 
+.masterMenu+.submenu {
+    display: none;
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+.masterMenu+.submenu li a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E4EBF2;
+    color: #000;
+    font-weight: 600;
+}
+.masterMenu+.submenu li a:hover{
+    color: var(--color-primary-dark);
+}
+.masterMenu+.submenu li a.active{
+    color: var(--color-primary);
+    border-bottom: 1px solid #000;
+    pointer-events:none;
+}
+a.masterMenu.active+ul.submenu {
+    display: block;
+    
+}
+
 .sidebarMenu>li>a {
-    height: 60px;
+    height: 50px;
     padding-left: 15px;
     display: flex;
     align-items: center;
@@ -74,8 +102,10 @@
 
 .forCloseSidebar {
     position: absolute;
-    right: 5px;
+    right: 0px;
     top: 10px;
+    width: 3rem;
+    height: 3rem;
 }
 
 .forCloseSidebar .material-symbols-outlined {
@@ -84,7 +114,7 @@
 }
 
 .forCloseSidebar .material-symbols-outlined::after {
-    content: '\e5d2';
+    content: '\e5cd';
 }
 
 #sidebar:has(.forCloseSidebar input:checked) {
@@ -94,7 +124,7 @@
 }
 
 #sidebar:has(.forCloseSidebar input:checked) .material-symbols-outlined.CloseSidebarIcon::after {
-    content: '\e00d';
+    content: '\e5d2';
 }
 
 body:has(#sidebar .forCloseSidebar input:checked) .main {
@@ -106,15 +136,21 @@ body:has(#sidebar .forCloseSidebar input:checked) .main {
 }
 
 @media (max-width:767px) {
-    #sidebar {
-        left: calc(-1 * var(--sidebar-width));
-        z-index: 19;
+    /* #sidebar {
+        transition: none
+    } */
+
+    #sidebar:has(.forCloseSidebar input:not(:checked)) {
+        left: calc(var(--sidebar-position) * -1);
+        /* z-index: 19; */
     }
 
     .forCloseSidebar {
         position: fixed;
-        right: calc(100% - 3rem);
+        right: calc(100% - 4rem);
         top: 15px;
+        width: 3rem;
+        height: 3rem;
     }
 
     #sidebar:has(.forCloseSidebar input:checked) {
@@ -125,9 +161,23 @@ body:has(#sidebar .forCloseSidebar input:checked) .main {
         display: block;
     }
 
+    .sidebarMenu>li>a {
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     #sidebar .logo {
-        padding-top: 60px;
-        padding-bottom: 20px;
+        padding-top: 25px;
+        padding-bottom: 5px;
+        width: 35%;
+    }
+    #sidebar .material-symbols-outlined.CloseSidebarIcon::after {
+        content:'\e5d2 '  
+    }
+    
+    #sidebar:has(.forCloseSidebar input:checked) .material-symbols-outlined.CloseSidebarIcon::after {
+        content: '\e5cd';
     }
 
     #mask {
@@ -137,6 +187,7 @@ body:has(#sidebar .forCloseSidebar input:checked) .main {
         right: 0;
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.8);
-        z-index: 18;
+        z-index: 22;
     }
+
 }

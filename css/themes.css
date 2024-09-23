@@ -1,6 +1,6 @@
 :root {
-    --sidebar-width: 210px;
-    --sidebar-position: 210px;
+    --sidebar-width: 250px;
+    --sidebar-position: 250px;
     --sidebar-position-close: 50px;
     --body-bg: #F2F5F8;
     --falcon-gray-400: #b6c1d2;
@@ -88,7 +88,8 @@ html {
 
 @media (max-width:767px) {
     :root {
-        --sidebar-position: 0;
+        /* --sidebar-position: 0; */
+        --sidebar-position-close:0
     }
 
 }
