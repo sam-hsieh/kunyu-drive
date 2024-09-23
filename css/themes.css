@@ -1,0 +1,94 @@
+:root {
+    --sidebar-width: 210px;
+    --sidebar-position: 210px;
+    --sidebar-position-close: 50px;
+    --body-bg: #F2F5F8;
+    --falcon-gray-400: #b6c1d2;
+    --g-icon-bgc: transparent;
+    --g-icon-radius: 50%;
+    --g-icon-wh: 1rem;
+    --g-icon-fz: 1rem;
+    --color-9a: #95A4B2;
+    --color-primary-dark: #0044B5;
+    --color-primary: #3C81F3;
+    --color-primary-sec: #7AA4EA;
+    --color-primary-third: #BCD5FE;
+    --body-color: #545454;
+    --outline-bdc: #DFE8F6
+}
+
+a {
+    text-decoration: none !important;
+    color: var(--body-color)
+}
+
+body,
+html {
+    color: var(--body-color);
+    background-color: var(--body-bg);
+}
+
+.g-icon {
+    color: var(--g-icon-color);
+    font-size: var(--g-icon-fz);
+    width: var(--g-icon-wh, var(--g-icon-fz));
+    height: var(--g-icon-wh, var(--g-icon-fz));
+    background-color: var(--g-icon-bgc);
+    border-radius: var(--g-icon-radius);
+}
+
+/* 預設使用非填滿圖示 */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+/* 如果要使用填滿圖示 */
+.material-symbols-outlined.filled {
+    font-variation-settings:
+        'FILL' 1
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.btn-outline-primary {
+    color: #707070;
+    border: 1px solid var(--outline-bdc);
+}
+
+.btn-outline-primary:hover {
+    border: 1px solid var(--color-primary-third);
+    color: var(--body-color);
+    background-color: var(--color-primary-third);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: 1px solid var(--outline-bdc);
+}
+
+.modal-header {
+    background-image: linear-gradient(65deg, var(--color-primary), var(--color-primary-sec));
+    color: #fff;
+}
+
+.modal-content {
+    border: none;
+}
+
+.progress-bar {
+    background-color: var(--color-primary)
+}
+
+@media (max-width:767px) {
+    :root {
+        --sidebar-position: 0;
+    }
+
+}

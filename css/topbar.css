@@ -1,0 +1,221 @@
+#topbar {
+    /* margin-left: var(--sidebar-position); */
+    background-color: #fff;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+.userfunc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.userfunc .topMainFunc {
+    --g-icon-fz: 2rem;
+    --g-icon-wh: 2rem;
+    --g-icon-color: var(--color-9a)
+}
+
+.userfunc .topMainFunc.active {
+    --g-icon-fz: 2rem;
+    --g-icon-wh: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: #fff;
+
+}
+
+.userfunc a:has(.topMainFunc.active) {
+    pointer-events: none;
+}
+
+.userfunc .topMainFunc:hover {
+    color: var(--color-primary-dark);
+}
+
+.secfuncbar {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap:10px*/
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-top: 1px solid #E4EBF2;
+
+}
+
+.secfuncbar .breadcrumb {
+    color: #95A4B2;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+
+.secfuncbar .breadcrumb a {
+    color: #95A4B2;
+}
+
+.secfuncbar .breadcrumb-item.active {
+    color: #545454;
+    font-weight: 900;
+}
+
+.secfuncbar .buts-group {
+    padding-top: 15px;
+    display: flex;
+    flex-grow: 1;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+#userlogin:hover>* {
+    color: var(--color-primary-dark);
+}
+
+/* search */
+.search-box {
+    position: relative;
+    width: 21rem;
+    font-size: 0.8333333333rem;
+}
+
+.search-box .search-box-icon {
+    position: absolute;
+    color: #95A4B2;
+    top: 50%;
+    left: 0.9rem;
+    -webkit-transform: translateY(-48%);
+    -ms-transform: translateY(-48%);
+    transform: translateY(-48%);
+}
+
+.search-box .search-input {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    line-height: 1.7;
+    border-radius: 50rem;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #F2F5F8;
+    border: none;
+
+}
+
+.search-box .search-input::placeholder {
+    color: #95A4B2;
+}
+
+.search-box .search-input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search-box [data-bs-toggle=search]:not(.show)+[data-bs-dismiss=search] {
+    display: none;
+}
+
+.search-box .file-thumbnail {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.safari .search-box .search-input {
+    line-height: 2;
+}
+
+.btn-close-falcon {
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+}
+
+.btn-close-falcon:hover {
+    opacity: 1;
+}
+
+.btn-close-falcon:after,
+.btn-close-falcon:before {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    content: " ";
+    height: 16px;
+    width: 2px;
+    background-color: #5e6e82;
+}
+
+.btn-close-falcon:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.btn-close-falcon:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+
+@media(max-width:1023px) {
+    .search-box {
+        width: 23vw;
+    }
+}
+
+@media (max-width:767px) {
+    .search-box {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        background-color: #fff;
+    }
+
+    .search-box .search-box-icon {
+        left: 1.9rem;
+    }
+
+    .secfuncbar {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .buts-group button {
+        font-size: 14px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .userfunc .topMainFunc {
+        --g-icon-fz: 1.5rem;
+        --g-icon-wh: 1.5rem;
+    }
+
+    .userfunc .topMainFunc.active {
+        --g-icon-fz: 1.5rem;
+        --g-icon-wh: 2rem;
+    }
+}

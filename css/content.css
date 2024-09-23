@@ -1,0 +1,30 @@
+@import url(./themes.css);
+@import url(./sidebar.css);
+@import url(./topbar.css);
+
+.main {
+    margin-left: var(--sidebar-position);
+    background-color: var(--body-bg);
+    transition: margin 0.5s;
+    padding-bottom: 100px;
+}
+
+#content-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+@media (max-width:767px) {
+    .main {
+        margin-left: 0;
+    }
+    #content-page {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+
+}
