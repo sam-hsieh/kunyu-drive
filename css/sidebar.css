@@ -2,7 +2,8 @@
 #sidebar {
     width: var(--sidebar-width);
     position: fixed;
-    min-height: 100vh;
+    height: 100svh; 
+    height: -webkit-fill-available; 
     top: 0;
     left: 0;
     background-color: #fff;
@@ -10,14 +11,15 @@
     z-index: 99;
     transition: left 0.5s;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #sidebar .diskused {
-    position: absolute;
-    bottom: 40px;
-    left: 0;
+
     width: 100%;
-    padding: 0 50px 0 20px;
+    padding: 20px 50px 20px 20px;
 }
 
 #sidebar .logo {
@@ -48,17 +50,20 @@
     color: #000;
     font-weight: 600;
 }
-.masterMenu+.submenu li a:hover{
+
+.masterMenu+.submenu li a:hover {
     color: var(--color-primary-dark);
 }
-.masterMenu+.submenu li a.active{
+
+.masterMenu+.submenu li a.active {
     color: var(--color-primary);
     border-bottom: 1px solid #000;
-    pointer-events:none;
+    pointer-events: none;
 }
+
 a.masterMenu.active+ul.submenu {
     display: block;
-    
+
 }
 
 .sidebarMenu>li>a {
@@ -172,10 +177,11 @@ body:has(#sidebar .forCloseSidebar input:checked) .main {
         padding-bottom: 5px;
         width: 35%;
     }
+
     #sidebar .material-symbols-outlined.CloseSidebarIcon::after {
-        content:'\e5d2 '  
+        content: '\e5d2 '
     }
-    
+
     #sidebar:has(.forCloseSidebar input:checked) .material-symbols-outlined.CloseSidebarIcon::after {
         content: '\e5cd';
     }
