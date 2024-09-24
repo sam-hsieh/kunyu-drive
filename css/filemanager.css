@@ -59,7 +59,14 @@
     /* 超出部分顯示「...」 */
     width: 8rem;
 }
-
+.modal-fileTree{
+    max-height: var(--fileTree-h);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.modal-fileTree ul{
+    list-style-type:disc;
+}
 /* table responsive  */
 /* @media (max-width:768px) {
     .rwdTable table thead {

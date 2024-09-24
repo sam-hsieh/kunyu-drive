@@ -90,7 +90,7 @@
     padding-top: 15px;
     display: flex;
     flex-grow: 1;
-    gap: 10px;
+    gap: 5px;
     flex-wrap: wrap;
 }
 
