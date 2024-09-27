@@ -64,9 +64,37 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-.modal-fileTree ul{
-    list-style-type:disc;
+
+
+/* ul+li展開關閉 */
+.fileToggleCol ul{
+    padding-left: 5px;
+    list-style-type: none;
 }
+.fileToggleCol li {
+    position: relative;
+}
+
+.fileToggleCol li ul {
+    display: none;
+    margin-left: 20px; /* 調整縮排 */
+}
+
+.fileToggleCol li:has(ul) > label > a:after {
+    content: '+';
+    margin-left: 5px; /* 與文字間的空白 */
+    color: var(--color-primary);
+}
+
+.fileToggleCol li:has(ul) > label > input[type="radio"]:checked + a:after {
+    content: '-';
+}
+
+.fileToggleCol li:has(ul) > label:has(input[type="radio"]:checked) + ul {
+    display: block;
+}
+
+
 /* table responsive  */
 /* @media (max-width:768px) {
     .rwdTable table thead {
