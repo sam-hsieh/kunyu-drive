@@ -9,22 +9,85 @@
     padding-bottom: 100px;
 }
 
+/* dashboard */
+#dashboard {
+    width: 96%;
+    margin: 0 auto;
+    padding-top: 5vh;
+}
+
+#dashboard .info-iocn {
+    max-width: 55px;
+}
+
+#dashboard h2 {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 0;
+}
+
+#dashboard p {
+    margin-bottom: 0;
+    color: var(--color-9a);
+}
+
+#dashboard .cube-pill {
+    border-radius: 25px;
+    width: 43px;
+    height: 16px
+}
+
+#dashboard .info-border {
+    border-right: 1px solid var(--falcon-gray-400);
+    border-left: 1px solid var(--falcon-gray-400);
+}
+
+#dashboard #gauge {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#dashboard #gauge-info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+}
+#dashboard #gauge-info .ht1{
+    font-size: 3rem;
+}
+/*  */
 #content-page {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-
-
+@media (max-width:768px) {
+    #dashboard {
+        width: 80%;
+    }
+    #dashboard .info-border {
+        border-right: none;
+        border-left: none;
+        border-top: 1px solid var(--falcon-gray-400);
+        border-bottom: 1px solid var(--falcon-gray-400);
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
 @media (max-width:767px) {
     .main {
         margin-left: 0;
     }
+
     #content-page {
         padding-left: 3vw;
         padding-right: 3vw;
     }
 
-
+    
 }

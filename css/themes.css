@@ -15,7 +15,8 @@
     --color-primary-third: #BCD5FE;
     --body-color: #545454;
     --outline-bdc: #DFE8F6;
-    --definefz: 1rem
+    --definefz: 1rem;
+    --skin-bg: #fff;
 }
 
 a {
@@ -108,6 +109,10 @@ html {
     color: var(--color-primary)
 }
 
+.text-site-secondary {
+    color: var(--color-9a);
+}
+
 .tableFzxs td,
 .tableFzxs th {
     font-size: var(--definefz);
@@ -137,6 +142,14 @@ html {
 
 .sidebar-menu::-webkit-scrollbar-track {
     box-shadow: #96b2dc;
+}
+
+.uikit-skin-bg {
+    background-color: var(--skin-bg);
+    border: 1px solid #E4EBF2;
+    padding: 1.75rem;
+    border-radius: 10px;
+
 }
 
 @media (max-width:767px) {
