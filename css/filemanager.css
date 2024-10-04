@@ -59,11 +59,7 @@
     /* 超出部分顯示「...」 */
     width: 8rem;
 }
-.modal-fileTree{
-    max-height: var(--fileTree-h);
-    overflow-x: hidden;
-    overflow-y: auto;
-}
+
 
 
 /* ul+li展開關閉 */

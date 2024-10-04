@@ -17,13 +17,24 @@
     --outline-bdc: #DFE8F6;
     --definefz: 1rem;
     --skin-bg: #fff;
+    --topBarHeight:123px;
+    --hover-color:#0044B5
 }
 
 a {
     text-decoration: none !important;
     color: var(--body-color)
 }
-
+a:hover{
+    color: var(--hover-color);
+}
+.pretendLink{
+    color: var(--body-color);
+    cursor: pointer;
+}
+.pretendLink:hover{
+    color: var(--hover-color);
+}
 body,
 html {
     color: var(--body-color);
@@ -89,7 +100,7 @@ html {
     background-color: var(--color-primary)
 }
 
-.modalMask {
+.modalMask,#loadingMask {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,14 +1,18 @@
 @import url(./themes.css);
 @import url(./sidebar.css);
 @import url(./topbar.css);
-
+:root{
+    --fileTree-h:auto
+}
 .main {
     margin-left: var(--sidebar-position);
     background-color: var(--body-bg);
     transition: margin 0.5s;
+   
+}
+.main.search{
     padding-bottom: 100px;
 }
-
 /* dashboard */
 #dashboard {
     width: 96%;
@@ -58,11 +62,24 @@
     font-size: 3rem;
 }
 /*  */
-#content-page {
+#content-page,.content-page  {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.modal-fileTree,.fileTree{
+    max-height: var(--fileTree-h);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.table>:not(caption)>*>*{
+    background-color: transparent;
+}
+.fixedBottonBar{
+    --Barbg:var(--body-bg);
+    background-color: var(--Barbg);
 }
 @media (max-width:768px) {
     #dashboard {
@@ -78,6 +95,7 @@
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
     }
+
 }
 @media (max-width:767px) {
     .main {

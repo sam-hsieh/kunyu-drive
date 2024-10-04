@@ -1,0 +1,53 @@
+.role-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr; /* 左右兩列 */
+    grid-template-rows: auto auto; /* 上下兩行 */
+    gap: 1rem;
+  }
+
+  .item-a {
+    grid-column: 1; /* 第一列 */
+    grid-row: 1;    /* 第一行 */
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  .item-b {
+    grid-column: 2; /* 第二列 */
+    grid-row: 1 / span 2; /* 跨兩行 */
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  .item-c {
+    grid-column: 1; /* 第一列 */
+    grid-row: 2;    /* 第二行 */
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  /* 手機版佈局 */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* 單列 */
+      grid-template-rows: auto auto auto; /* 三行 */
+    }
+
+    .item-a {
+      grid-column: 1; /* 第一列 */
+      grid-row: 1;    /* 第一行 */
+    }
+
+    .item-b {
+      grid-column: 1; /* 第一列 */
+      grid-row: 2;    /* 第二行 */
+    }
+
+    .item-c {
+      grid-column: 1; /* 第一列 */
+      grid-row: 3;    /* 第三行 */
+    }
+  }

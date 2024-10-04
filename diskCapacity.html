@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系統管理-磁碟容量維護</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/content.css">
+    <link rel="stylesheet" href="./css/filemanager.css">
+</head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<body>
+    <div id="sidebar">
+    <label for="closeSidebar" class="forCloseSidebar">
+        <input type="checkbox" id="closeSidebar" class="d-none">
+        <span class="CloseSidebarIcon material-symbols-outlined">
+        </span>
+    </label>
+    <div>
+        <div class="logo">
+            <img src="./img/Logo.png" alt="單位名稱" class="img-fluid">
+        </div>
+        <ul class="sidebarMenu">
+                            <li>
+                    <a href="#" class="masterMenu">網路磁碟</a>
+                    <ul class="submenu">
+                                                    <li><a href="#" >磁碟使用狀況</a></li>
+                                                    <li><a href="#" >磁碟管理</a></li>
+                                                    <li><a href="#" >單位共用磁碟</a></li>
+                                                    <li><a href="#" >個人共用磁碟</a></li>
+                                                    <li><a href="#" >垃圾桶</a></li>
+                                            </ul>
+                                <li>
+                    <a href="#" class="masterMenu active">系統管理</a>
+                    <ul class="submenu">
+                                                    <li><a href="#" >帳號管理</a></li>
+                                                    <li><a href="#" >角色管理</a></li>
+                                                    <li><a href="#" class="active">磁碟容量維護</a></li>
+                                                    <li><a href="#" >目錄維護權限</a></li>
+                                                    <li><a href="#" >參數管理</a></li>
+                                            </ul>
+                                <li>
+                    <a href="#" class="masterMenu">異動LOG記錄</a>
+                    <ul class="submenu">
+                                                    <li><a href="#" >權限異動LOG記錄</a></li>
+                                                    <li><a href="#" >檔案異動LOG記錄</a></li>
+                                            </ul>
+                                <li>
+                    <a href="#" class="masterMenu">安全設定</a>
+                    <ul class="submenu">
+                                                    <li><a href="#" >安全設定</a></li>
+                                            </ul>
+                                </li>
+        </ul>
+    </div>
+    <div class="diskused">
+        <div class="d-flex align-items-center justify-content-center">
+            <span class="material-symbols-outlined">
+                cloud_upload
+            </span>
+            <span>使用狀態</span>
+        </div>
+        <div class="progress my-3" role="progressbar" style="height:8px">
+            <div class="progress-bar" style="width: 25%"></div>
+        </div>
+        <div class="text-center" style="font-size: 13px;">
+            已使用39.2GB (共60GB)
+        </div>
+    </div>
+</div>
+<div id="mask"></div>    <div class="main">
+        <div id="topbar">
+    <div class="userfunc">
+        <a href="#" class="d-flex align-items-center gap-1" id="userlogin">
+
+            <span class="g-icon d-block material-symbols-outlined filled" style="--g-icon-fz:1.5rem;--g-icon-wh:1.5rem;--g-icon-color:var(--color-9a);font-weight:500">
+                account_circle
+            </span>
+            <div class="d-flex align-items-center gap-1">
+                <p class="mb-0">顯示資訊單位</p> <span class="badge text-bg-secondary ">登出</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="secfuncbar">
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <nav class="flex-grow-1" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">系統管理</a></li>
+                    <li class="breadcrumb-item active">磁碟容量維護</li>
+                </ol>
+            </nav>
+                    </div>
+
+                    </div>
+
+</div>                    <div class="container-fluid bg-white p-4">
+                <div class="row align-items-center g-3">
+                    <div class="col-12 col-md-4">
+                        <input type="text" class="form-control" placeholder="使用者帳號">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <input type="text" class="form-control" placeholder="使用者姓名">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <input type="text" class="form-control" placeholder="職稱">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="flex-shrink-0">單位</label>
+                            <select class="form-select">
+                                <option>資通安全處</option>
+                                <option>資通安全處</option>
+                                <option>資通安全處</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="flex-shrink-0">科站組</label>
+                            <select class="form-select">
+                                <option>應用系統科</option>
+                                <option>應用系統科</option>
+                                <option>應用系統科</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="flex-shrink-0">身份</label>
+                            <select class="form-select">
+                                <option>系統人員</option>
+                                <option>單位主管</option>
+                                <option>科組主管</option>
+                                <option>一般人員</option>
+                            </select>
+                        </div>
+                    </div>
+                                        <div class="col-12 col-md-auto text-md-start text-center">
+                        <button class="btn btn-primary"><i class="bi bi-search"></i> 查詢</button>
+                        <button class="btn btn-secondary"><i class="bi bi-search"></i> 取消</button>
+                    </div>
+                </div>
+            </div>
+                                <div class="content-page">
+                                                    <div class="rwdTable fileManager table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th nowrap style="width: 4rem;">
+                                    <button class="btn btn-primary btn-sm selectAll[DE8EA]">全選</button>
+                                </th>
+                                <th nowrap> 序號</th>
+                                <th nowrap="">帳號</th>
+                                <th nowrap="">姓名</th>
+                                <th nowrap="">部門</th>
+                                <th nowrap="">職稱</th>
+                                <th nowrap="">容量</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 1</td>
+                                    <td nowrap="">m20021</td>
+                                    <td nowrap="">李○○</td>
+                                    <td nowrap="">國家維護處</td>
+                                    <td nowrap="">處長</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 2</td>
+                                    <td nowrap="">m20022</td>
+                                    <td nowrap="">劉○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">副處長</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 3</td>
+                                    <td nowrap="">m20023</td>
+                                    <td nowrap="">陳○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">科長</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 4</td>
+                                    <td nowrap="">m20024</td>
+                                    <td nowrap="">吳○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">科長</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 5</td>
+                                    <td nowrap="">m20025</td>
+                                    <td nowrap="">謝○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">科長</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 6</td>
+                                    <td nowrap="">m20026</td>
+                                    <td nowrap="">林○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">科長</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 7</td>
+                                    <td nowrap="">m20027</td>
+                                    <td nowrap="">王○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">調查專員</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 8</td>
+                                    <td nowrap="">m20028</td>
+                                    <td nowrap="">邱○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">調查專員</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 9</td>
+                                    <td nowrap="">m20029</td>
+                                    <td nowrap="">劉○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">調查專員</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 10</td>
+                                    <td nowrap="">m20030</td>
+                                    <td nowrap="">陳○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">調查專員</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input eachCheckBox[DE8EA]" type="checkbox" value="" id="selectAll">
+                                    </td>
+                                    <td nowrap> 11</td>
+                                    <td nowrap="">m20031</td>
+                                    <td nowrap="">吳○○</td>
+                                    <td nowrap=""></td>
+                                    <td nowrap="">調查專員</td>
+                                    <td nowrap="">20GB</td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+                <div class="col-12 sticky-sm-bottom fixedBottonBar">
+                    <div class="p-3 mt-3 ">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#ModaldiskCapacity">
+                                <i class="bi bi-check-square"></i>
+                                設定容量
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                                            </div>
+            </div>
+                            <!-- ModaldiskCapacity-->
+        <div class="modal fade" id="ModaldiskCapacity" tabindex="-1" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">容量設定</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="d-flex align-items-center gap-2 pt-2">
+                                <label class="text-nowrap">設定總容量</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="number">
+                                    <span class="input-group-text">GB</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-danger btn-submitData">儲存</button>
+                    </div>
+                    <div class="modalMask d-none">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                <script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/script.js"></script>
+    <script src="./js/setting.js"></script>
+
+    <script>
+        const topbar = document.getElementById('topbar');
+        if (topbar) {
+            const topbarHeight = topbar.offsetHeight;
+            document.documentElement.style.setProperty('--topBarHeight', `${topbarHeight}px`);
+        }
+        // const ModalSharedWith = new bootstrap.Modal('#ModaluserDiskCapacityc', {
+        //     //show: true
+        // })
+        // ModalSharedWith.show()
+    </script>
+
+
+</body>
+
+</html>

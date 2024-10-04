@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系統管理-參數管理</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/content.css">
+    <link rel="stylesheet" href="./css/filemanager.css">
+</head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<body>
+    <div id="sidebar">
+    <label for="closeSidebar" class="forCloseSidebar">
+        <input type="checkbox" id="closeSidebar" class="d-none">
+        <span class="CloseSidebarIcon material-symbols-outlined">
+        </span>
+    </label>
+    <div>
+        <div class="logo">
+            <img src="./img/Logo.png" alt="單位名稱" class="img-fluid">
+        </div>
+        <ul class="sidebarMenu">
+                            <li>
+                    <a href="#" class="masterMenu">網路磁碟</a>
+                    <ul class="submenu">
+                                                    <li><a href="#" >磁碟使用狀況</a></li>
+                                                    <li><a href="#" >磁碟管理</a></li>
+                                                    <li><a href="#" >單位共用磁碟</a></li>
+                                                    <li><a href="#" >個人共用磁碟</a></li>
+                                                    <li><a href="#" >垃圾桶</a></li>
+                                            </ul>
+                                <li>
+                    <a href="#" class="masterMenu active">系統管理</a>
+                    <ul class="submenu">
+                                                    <li><a href="#" >帳號管理</a></li>
+                                                    <li><a href="#" >角色管理</a></li>
+                                                    <li><a href="#" >磁碟容量維護</a></li>
+                                                    <li><a href="#" >目錄維護權限</a></li>
+                                                    <li><a href="#" class="active">參數管理</a></li>
+                                            </ul>
+                                <li>
+                    <a href="#" class="masterMenu">異動LOG記錄</a>
+                    <ul class="submenu">
+                                                    <li><a href="#" >權限異動LOG記錄</a></li>
+                                                    <li><a href="#" >檔案異動LOG記錄</a></li>
+                                            </ul>
+                                <li>
+                    <a href="#" class="masterMenu">安全設定</a>
+                    <ul class="submenu">
+                                                    <li><a href="#" >安全設定</a></li>
+                                            </ul>
+                                </li>
+        </ul>
+    </div>
+    <div class="diskused">
+        <div class="d-flex align-items-center justify-content-center">
+            <span class="material-symbols-outlined">
+                cloud_upload
+            </span>
+            <span>使用狀態</span>
+        </div>
+        <div class="progress my-3" role="progressbar" style="height:8px">
+            <div class="progress-bar" style="width: 25%"></div>
+        </div>
+        <div class="text-center" style="font-size: 13px;">
+            已使用39.2GB (共60GB)
+        </div>
+    </div>
+</div>
+<div id="mask"></div>    <div class="main">
+        <div id="topbar">
+    <div class="userfunc">
+        <a href="#" class="d-flex align-items-center gap-1" id="userlogin">
+
+            <span class="g-icon d-block material-symbols-outlined filled" style="--g-icon-fz:1.5rem;--g-icon-wh:1.5rem;--g-icon-color:var(--color-9a);font-weight:500">
+                account_circle
+            </span>
+            <div class="d-flex align-items-center gap-1">
+                <p class="mb-0">顯示資訊單位</p> <span class="badge text-bg-secondary ">登出</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="secfuncbar">
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <nav class="flex-grow-1" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">系統管理</a></li>
+                    <li class="breadcrumb-item active">參數管理</li>
+                </ol>
+            </nav>
+                    </div>
+
+                            <div class="buts-group">
+                                    <button type="button" class="btn btn-outline-primary" >
+                        <div class="d-flex aling-items-center">
+                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                add                            </span>
+                            <span class="lh-1 ms-1"> 新增</span>
+                        </div>
+                    </button>
+
+                                    <button type="button" class="btn btn-outline-primary" >
+                        <div class="d-flex aling-items-center">
+                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                exit_to_app                            </span>
+                            <span class="lh-1 ms-1"> 匯出清單</span>
+                        </div>
+                    </button>
+
+                            </div>
+            </div>
+
+</div>                                    <div class="container-fluid bg-white p-4">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-auto">
+                        <input type="text" class="form-control" placeholder="使用者帳號">
+                    </div>
+                    <div class="col-12 col-md-auto">
+                        <input type="text" class="form-control" placeholder="使用者姓名">
+                    </div>
+                    <div class="col-12 col-md-auto">
+                        <button class="btn btn-primary"><i class="bi bi-search"></i> 查詢</button>
+                    </div>
+                </div>
+            </div>
+                <div class="content-page">
+                                                                            <div class="rwdTable fileManager table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th nowrap> 編號</th>
+                                <th nowrap>項目</th>
+                                <th nowrap>參數代碼</th>
+                                <th nowrap>參數名稱</th>
+                                <th nowrap>排序</th>
+                                <th nowrap>是否顯示</th>
+                                <th nowrap>可否調整</th>
+                                <th nowrap>功能</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td nowrap> 1</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>001</td>
+                                    <td nowrap>國家維護處</td>
+                                    <td nowrap>1</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 2</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>002</td>
+                                    <td nowrap>廉政處</td>
+                                    <td nowrap>2</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 3</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>003</td>
+                                    <td nowrap>經濟犯罪防制處</td>
+                                    <td nowrap>3</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 4</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>004</td>
+                                    <td nowrap>毒品防制處</td>
+                                    <td nowrap>4</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 5</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>005</td>
+                                    <td nowrap>洗錢防制處</td>
+                                    <td nowrap>5</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 6</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>006</td>
+                                    <td nowrap>資通安全處</td>
+                                    <td nowrap>6</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 7</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>007</td>
+                                    <td nowrap>國內安全調查處</td>
+                                    <td nowrap>7</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 8</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>008</td>
+                                    <td nowrap>保防處</td>
+                                    <td nowrap>8</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 9</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>009</td>
+                                    <td nowrap>秘書處</td>
+                                    <td nowrap>9</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <td nowrap> 10</td>
+                                    <td nowrap>單位代碼</td>
+                                    <td nowrap>010</td>
+                                    <td nowrap>行政總處</td>
+                                    <td nowrap>10</td>
+                                    <td nowrap>顯示</td>
+                                    <td nowrap> 可</td>
+                                    <td>
+                                        <div class="d-flex justify-content-start gap-2">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <button type="button" class="btn btn-primary" >
+                                                        <div class="d-flex aling-items-center">
+                                                            <span class="g-icon d-block material-symbols-outlined" style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
+                                                                edit                                                            </span>
+                                                            <span class="lh-1 ms-1"> 編輯</span>
+                                                        </div>
+                                                    </button>
+                                                                                                                                    </div>
+                                    </td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+                    </div>
+            </div>
+                                <script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/script.js"></script>
+    <script src="./js/setting.js"></script>
+
+    <script>
+        const topbar = document.getElementById('topbar');
+        if (topbar) {
+            const topbarHeight = topbar.offsetHeight;
+            document.documentElement.style.setProperty('--topBarHeight', `${topbarHeight}px`);
+        }
+        // const ModalSharedWith = new bootstrap.Modal('#ModaluserDiskCapacityc', {
+        //     //show: true
+        // })
+        // ModalSharedWith.show()
+    </script>
+
+
+</body>
+
+</html>
