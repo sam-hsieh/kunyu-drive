@@ -109,7 +109,7 @@
     position: absolute;
     color: #95A4B2;
     top: 50%;
-    left: 0.9rem;
+    right: 0.9rem;
     -webkit-transform: translateY(-48%);
     -ms-transform: translateY(-48%);
     transform: translateY(-48%);

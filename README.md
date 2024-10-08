@@ -9,3 +9,7 @@
 帳號管理-磁碟容量維護：	diskCapacity.html  
 帳號管理-目錄維護權限：	directory.html  
 帳號管理-參數管理：	parameters.html  
+
+異動LOG記錄-權限異動LOG記錄"：logsPer.html  
+異動LOG記錄-檔案異動LOG記錄"：logsfil.html  
+系統設定-系統設定：system.html  
