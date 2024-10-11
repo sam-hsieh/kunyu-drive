@@ -1,3 +1,4 @@
+@import url(../bootstrap-icons/font/bootstrap-icons.min.css);
 :root {
     --sidebar-width: 250px;
     --sidebar-position: 250px;
@@ -20,6 +21,27 @@
     --topBarHeight:123px;
     --hover-color:#0044B5
 }
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    src: url(../material-iconfont/MaterialSymbolsOutlined-VariableFont_FILL\,GRAD\,opsz\,wght.ttf) format('woff2');
+  }
+
+
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  } 
+
 
 a {
     text-decoration: none !important;
