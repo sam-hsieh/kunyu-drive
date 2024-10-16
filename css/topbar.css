@@ -210,20 +210,13 @@
     #topbar .breadcrumb {
         font-size: 1rem;
         padding: 5vw;
-        background-image: linear-gradient(90deg, var(--body-bg),  #cbd8e5);
-        /* background-color: ; */
     }
 
-    /* .search-box {
-       margin-left: 3rem;
-       width: 12rem;
-    }*/
     .secfuncbar {
         padding-left: 0;
         padding-right: 0;
         padding-top: 0;
     }
-
     .search-box {
         position: fixed;
         bottom: 0;
@@ -241,6 +234,7 @@
     .secfuncbar .buts-group {
         padding: 15px 4vw 0 4vw;
     }
+
     .buts-group button {
         /* width: 120px; */
         /* font-size: 14px; */
@@ -256,5 +250,15 @@
     .userfunc .topMainFunc.active {
         --g-icon-fz: 1.5rem;
         --g-icon-wh: 2rem;
+    }
+}
+@media (max-width:576px){
+    #topbar .breadcrumb {
+
+        background-image: linear-gradient(90deg, var(--body-bg), #cbd8e5);
+    }
+    .buts-group.next-breadcrumb {
+        width: 100%;
+         padding-top: 15px !important;
     }
 }
