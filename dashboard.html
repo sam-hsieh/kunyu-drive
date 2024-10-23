@@ -86,7 +86,7 @@
             </div>
 
             <div class="secfuncbar">
-                <div class="d-flex justify-content-between align-items-center w-100">
+                <div class="d-flex justify-content-between align-items-center w-100 flex-wrap">
                     <nav class="flex-grow-1"
                         style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
                         aria-label="breadcrumb">
@@ -95,84 +95,7 @@
                             <li class="breadcrumb-item active">磁碟使用狀況</li>
                         </ol>
                     </nav>
-                    <div class="search-box">
-                        <input class="form-control search-input " type="search" placeholder="查詢檔案">
-                        <button class="border-0 bg-transparent search-box-icon">
-                            <svg class="svg-inline--fa fa-search fa-w-16 " aria-hidden="true" focusable="false"
-                                data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512" data-fa-i2svg="">
-                                <path fill="currentColor"
-                                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
-                                </path>
-                            </svg>
-                        </button>
-
-                    </div>
                 </div>
-
-                <div class="buts-group">
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#ModalCreateFolder">
-                        <div class="d-flex aling-items-center">
-                            <span class="g-icon d-block material-symbols-outlined"
-                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                add </span>
-                            <span class="lh-1 ms-1"> 新資料夾</span>
-                        </div>
-                    </button>
-
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#ModaluploadFile">
-                        <div class="d-flex aling-items-center">
-                            <span class="g-icon d-block material-symbols-outlined"
-                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                cloud_upload </span>
-                            <span class="lh-1 ms-1"> 檔案上傳</span>
-                        </div>
-                    </button>
-
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#ModaluploadFolder">
-                        <div class="d-flex aling-items-center">
-                            <span class="g-icon d-block material-symbols-outlined"
-                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                drive_folder_upload </span>
-                            <span class="lh-1 ms-1"> 資料夾上傳</span>
-                        </div>
-                    </button>
-
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#ModaldeleteFile">
-                        <div class="d-flex aling-items-center">
-                            <span class="g-icon d-block material-symbols-outlined"
-                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                delete </span>
-                            <span class="lh-1 ms-1"> 刪除檔案</span>
-                        </div>
-                    </button>
-
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#ModaldeleteFolder">
-                        <div class="d-flex aling-items-center">
-                            <span class="g-icon d-block material-symbols-outlined"
-                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                delete </span>
-                            <span class="lh-1 ms-1"> 刪除資料夾</span>
-                        </div>
-                    </button>
-
-                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#ModalMove">
-                        <div class="d-flex aling-items-center">
-                            <span class="g-icon d-block material-symbols-outlined"
-                                style="--g-icon-fz:15px; --g-icon-color:var(--color-primary-sec)">
-                                trending_flat </span>
-                            <span class="lh-1 ms-1"> 移動</span>
-                        </div>
-                    </button>
-
-                </div>
-
 
             </div>
 
@@ -181,7 +104,7 @@
             <div id="dashboard">
 
                 <div class="row justify-content-between align-items-center uikit-skin-bg">
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-6">
                         <div class="d-flex gap-2 align-items-center justify-content-center">
                             <div>
                                 <img src="./img/folder_copy.png" alt="資料夾數量" class="info-iocn img-fluid">
@@ -192,7 +115,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-6">
 
                         <div class="info-border d-flex gap-2 align-items-center justify-content-center">
                             <div>
@@ -204,16 +127,6 @@
                             </div>
                         </div>
 
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        <div class="d-flex gap-2 flex-column align-items-end justify-content-center">
-                            <p class="fz-define" style="--definefz:0.8rem">登入時間：<span
-                                    class="text-site-secondary">2024/09/17 14:30:26</span></p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#ModalSharedWith">
-                                ＋ 開始使用
-                            </button>
-                        </div>
                     </div>
 
                 </div>
