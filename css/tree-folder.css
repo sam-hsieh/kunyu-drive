@@ -1,0 +1,56 @@
+@import url(./themes.css);
+@import url(./sidebar.css);
+@import url(./topbar.css);
+
+.tree-folder ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+/* 第一層（根目錄）的子層（A-1~A-4）預設顯示 */
+.tree-folder > ul,
+.tree-folder .root-children {
+    display: block;
+}
+
+/* 所有其他子層預設隱藏 */
+.tree-folder input[type="checkbox"] + label + ul {
+    display: none;
+}
+
+/* 被選取時展開 */
+.tree-folder input[type="checkbox"]:checked + label + ul {
+    display: block;
+}
+
+/* 當子層級有被選取的項目時，父層級也要展開 - 優先級要更高 */
+.tree-folder li:has(.selected) > input[type="checkbox"] + label + ul {
+    display: block !important;
+}
+
+/* 箭頭樣式 */
+.tree-folder label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 20px;
+}
+
+.tree-folder label::before {
+    font-family: 'Material Symbols Outlined';
+    content: "\e2c7";
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s;
+     color: #227188;
+}
+
+.tree-folder input[type="checkbox"]:checked + label::before {
+    content: "\e2c8";
+      color: #083f50;
+   
+}
+
+/* 當子層級有被選取的項目時，父層級的箭頭也要變成展開狀態 */
+.tree-folder li:has(.selected) > input[type="checkbox"] + label::before {
+    content: "\e2c8";
+}

@@ -1,0 +1,38 @@
+{
+  "label": "根目錄",
+  "children": [
+    {
+      "label": "A-1",
+      "children": [
+        {
+          "label": "A-1-1",
+          "children": [
+            {
+              "label": "A-1-1-1",
+              "children": [
+                { "label": "A-1-1-1-1" },
+                { "label": "A-1-1-1-2" }
+              ]
+            },
+            { "label": "A-1-1-2" },
+            { "label": "A-1-1-3" }
+          ]
+        },
+        { "label": "A-1-2" },
+        { "label": "A-1-3" },
+        { "label": "A-1-4" }
+      ]
+    },
+    {
+      "label": "A-2",
+      "children": [
+        { "label": "A-2-1" },
+        { "label": "A-2-2" },
+        { "label": "A-2-3" },
+        { "label": "A-2-4" }
+      ]
+    },
+    { "label": "A-3" },
+    { "label": "A-4" }
+  ]
+}
