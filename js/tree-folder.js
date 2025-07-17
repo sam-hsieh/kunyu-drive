@@ -1,46 +1,3 @@
-let idCounter = 0;
-
-function createTreeHTML(node) {
-    let html = '<ul>';
-    function walk(node, isRoot = false) {
-        let currentId = "tree-node-" + (idCounter++);
-
-        if (node.children && node.children.length > 0) {
-            // 如果是根節點，不需要 checkbox，直接顯示子層
-            if (isRoot) {
-                html += `<li>
-                    <label>${node.label}</label>`;
-                html += '<ul class="root-children">';
-                node.children.forEach(child => {
-                    walk(child);
-                });
-                html += '</ul>';
-                html += '</li>';
-            } else {
-                html += `<li>
-                    <input type="checkbox" id="${currentId}" class="tree-checkbox">
-                    <label for="${currentId}">${node.label}</label>`;
-                html += '<ul>';
-                node.children.forEach(child => {
-                    walk(child);
-                });
-                html += '</ul>';
-                html += '</li>';
-            }
-        } else {
-            // 即使沒有子項目，也用 label 包住保持一致性
-            html += `<li>
-                <input type="checkbox" id="${currentId}" class="tree-checkbox">
-                <label for="${currentId}">${node.label}</label>
-                </li>`;
-        }
-    }
-
-    walk(node, true);
-    html += '</ul>';
-    return html;
-}
-
 function setupSingleSelect() {
     // 為所有 checkbox 添加事件監聽器
     const checkboxes = document.querySelectorAll('.tree-checkbox');
@@ -63,21 +20,33 @@ function setupSingleSelect() {
                         otherCheckbox.classList.remove('selected');
                     }
                 });
+
+                // 獲取對應的 label 文字並設定到輸入欄位
+                const labelElement = this.nextElementSibling;
+                if (labelElement && labelElement.tagName === 'LABEL') {
+                    const labelText = labelElement.textContent.trim();
+                    
+                    // 尋找 ModalMove 中的輸入欄位
+                    const modalMoveInput = document.querySelector('#ModalMove input[type="text"]');
+                    if (modalMoveInput) {
+                        modalMoveInput.value = labelText;
+                    }
+                }
             } else {
                 // 如果取消勾選，也移除 selected class
                 this.classList.remove('selected');
+                
+                // 清空輸入欄位
+                const modalMoveInput = document.querySelector('#ModalMove input[type="text"]');
+                if (modalMoveInput) {
+                    modalMoveInput.value = '';
+                }
             }
         });
     });
 }
 
-// 載入外部 JSON
-fetch('tree-data.json')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('tree').innerHTML = createTreeHTML(data);
-        setupSingleSelect(); // 設置單選行為
-    })
-    .catch(err => {
-        document.getElementById('tree').innerHTML = '載入失敗：' + err;
-    });
+// 頁面載入完成後設置單選行為
+document.addEventListener('DOMContentLoaded', function() {
+    setupSingleSelect();
+});
